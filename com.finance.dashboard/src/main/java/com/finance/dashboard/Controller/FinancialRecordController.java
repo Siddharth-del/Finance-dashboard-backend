@@ -1,4 +1,4 @@
-package com.finance.dashboard.Controller;
+package com.finance.dashboard.controller;
 
 import java.time.LocalDate;
 
@@ -14,11 +14,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.finance.dashboard.Service.FinancialService;
 import com.finance.dashboard.config.AppCostant;
+import com.finance.dashboard.dto.FinancialRecordDTO;
+import com.finance.dashboard.dto.FinancialRecordResponse;
 import com.finance.dashboard.model.RecordType;
-import com.finance.dashboard.payload.FinancialRecordDTO;
-import com.finance.dashboard.payload.FinancialRecordResponse;
+import com.finance.dashboard.service.FinancialService;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

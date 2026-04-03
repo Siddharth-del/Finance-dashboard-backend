@@ -1,4 +1,4 @@
-package com.finance.dashboard.Service;
+package com.finance.dashboard.service;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -10,13 +10,13 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import com.finance.dashboard.dto.FinancialRecordDTO;
+import com.finance.dashboard.dto.FinancialRecordResponse;
 import com.finance.dashboard.exceptions.ResourceNotFoundException;
 import com.finance.dashboard.model.Category;
 import com.finance.dashboard.model.FinancialRecord;
 import com.finance.dashboard.model.RecordType;
 import com.finance.dashboard.model.User;
-import com.finance.dashboard.payload.FinancialRecordDTO;
-import com.finance.dashboard.payload.FinancialRecordResponse;
 import com.finance.dashboard.repository.CategoryRepository;
 import com.finance.dashboard.repository.FinancialRecordRepository;
 import com.finance.dashboard.repository.UserRepository;

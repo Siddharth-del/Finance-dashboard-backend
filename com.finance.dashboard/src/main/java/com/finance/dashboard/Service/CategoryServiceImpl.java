@@ -1,15 +1,15 @@
-package com.finance.dashboard.Service;
+package com.finance.dashboard.service;
 
 import java.util.List;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
+import com.finance.dashboard.dto.CategoryDTO;
+import com.finance.dashboard.dto.CategoryResponse;
 import com.finance.dashboard.exceptions.APIException;
 import com.finance.dashboard.exceptions.ResourceNotFoundException;
 import com.finance.dashboard.model.Category;
-import com.finance.dashboard.payload.CategoryDTO;
-import com.finance.dashboard.payload.CategoryResponse;
 import com.finance.dashboard.repository.CategoryRepository;
 
 import org.springframework.data.domain.Page;

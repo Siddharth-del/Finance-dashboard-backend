@@ -1,16 +1,16 @@
-package com.finance.dashboard.Service;
+package com.finance.dashboard.service;
 
 import java.util.List;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
+import com.finance.dashboard.dto.CategorySummaryDTO;
+import com.finance.dashboard.dto.DashboardDTO;
+import com.finance.dashboard.dto.FinancialRecordDTO;
+import com.finance.dashboard.dto.MonthlyTrendDTO;
 import com.finance.dashboard.model.FinancialRecord;
 import com.finance.dashboard.model.RecordType;
-import com.finance.dashboard.payload.CategorySummaryDTO;
-import com.finance.dashboard.payload.DashboardDTO;
-import com.finance.dashboard.payload.FinancialRecordDTO;
-import com.finance.dashboard.payload.MonthlyTrendDTO;
 import com.finance.dashboard.repository.FinancialRecordRepository;
 
 import jakarta.transaction.Transactional;

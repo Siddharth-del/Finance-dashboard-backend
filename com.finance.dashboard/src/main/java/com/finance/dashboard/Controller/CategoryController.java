@@ -1,4 +1,4 @@
-package com.finance.dashboard.Controller;
+package com.finance.dashboard.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,10 +12,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.finance.dashboard.Service.CategoryService;
 import com.finance.dashboard.config.AppCostant;
-import com.finance.dashboard.payload.CategoryDTO;
-import com.finance.dashboard.payload.CategoryResponse;
+import com.finance.dashboard.dto.CategoryDTO;
+import com.finance.dashboard.dto.CategoryResponse;
+import com.finance.dashboard.service.CategoryService;
+
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 

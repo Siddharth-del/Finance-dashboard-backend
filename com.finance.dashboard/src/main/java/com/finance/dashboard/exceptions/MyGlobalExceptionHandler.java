@@ -8,7 +8,7 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-import com.finance.dashboard.payload.APIResponse;
+import com.finance.dashboard.dto.APIResponse;
 
 import java.util.HashMap;
 import java.util.Map;

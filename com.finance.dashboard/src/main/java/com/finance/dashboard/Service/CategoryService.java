@@ -1,7 +1,7 @@
-package com.finance.dashboard.Service;
+package com.finance.dashboard.service;
 
-import com.finance.dashboard.payload.CategoryDTO;
-import com.finance.dashboard.payload.CategoryResponse;
+import com.finance.dashboard.dto.CategoryDTO;
+import com.finance.dashboard.dto.CategoryResponse;
 
 public interface CategoryService {
     CategoryDTO createcategory(CategoryDTO categoryDTO);

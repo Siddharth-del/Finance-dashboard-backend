@@ -1,6 +1,6 @@
-package com.finance.dashboard.Service;
+package com.finance.dashboard.service;
 
-import com.finance.dashboard.payload.DashboardDTO;
+import com.finance.dashboard.dto.DashboardDTO;
 
 public interface DashBoardService {
     public DashboardDTO getDashboard();

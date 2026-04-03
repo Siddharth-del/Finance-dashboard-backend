@@ -11,12 +11,12 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import com.finance.dashboard.dto.CategorySummaryDTO;
+import com.finance.dashboard.dto.FinancialRecordDTO;
+import com.finance.dashboard.dto.MonthlyTrendDTO;
 import com.finance.dashboard.model.FinancialRecord;
 import com.finance.dashboard.model.RecordType;
 import com.finance.dashboard.model.User;
-import com.finance.dashboard.payload.CategorySummaryDTO;
-import com.finance.dashboard.payload.FinancialRecordDTO;
-import com.finance.dashboard.payload.MonthlyTrendDTO;
 
 @Repository
 public interface FinancialRecordRepository extends JpaRepository<FinancialRecord, Long> {

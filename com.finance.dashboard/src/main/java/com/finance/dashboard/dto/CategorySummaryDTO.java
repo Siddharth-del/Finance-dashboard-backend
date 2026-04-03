@@ -1,4 +1,4 @@
-package com.finance.dashboard.payload;
+package com.finance.dashboard.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

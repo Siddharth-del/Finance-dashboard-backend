@@ -1,4 +1,4 @@
-package com.finance.dashboard.Controller;
+package com.finance.dashboard.controller;
 
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

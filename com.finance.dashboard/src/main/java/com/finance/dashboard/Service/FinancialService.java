@@ -1,10 +1,10 @@
-package com.finance.dashboard.Service;
+package com.finance.dashboard.service;
 
 import java.time.LocalDate;
 
+import com.finance.dashboard.dto.FinancialRecordDTO;
+import com.finance.dashboard.dto.FinancialRecordResponse;
 import com.finance.dashboard.model.RecordType;
-import com.finance.dashboard.payload.FinancialRecordDTO;
-import com.finance.dashboard.payload.FinancialRecordResponse;
 
 public interface FinancialService {
     FinancialRecordDTO createRecord(FinancialRecordDTO financialRecordDTO,Long categoryId);
