@@ -9,7 +9,6 @@ import com.finance.dashboard.dto.CategorySummaryDTO;
 import com.finance.dashboard.dto.DashboardDTO;
 import com.finance.dashboard.dto.FinancialRecordDTO;
 import com.finance.dashboard.dto.MonthlyTrendDTO;
-import com.finance.dashboard.model.FinancialRecord;
 import com.finance.dashboard.model.RecordType;
 import com.finance.dashboard.repository.FinancialRecordRepository;
 
