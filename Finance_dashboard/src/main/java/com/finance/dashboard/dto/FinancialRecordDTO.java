@@ -2,7 +2,6 @@ package com.finance.dashboard.dto;
 
 import java.time.LocalDate;
 
-import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
