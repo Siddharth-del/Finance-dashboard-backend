@@ -6,11 +6,13 @@ import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 public class CategorySummaryDTO {
      private String categoryName;
     private double total;
-    public CategorySummaryDTO(String categoryName, double total) {
-        this.categoryName = categoryName;
-        this.total = total;
-    }
+
+    // public CategorySummaryDTO(String categoryName, double total) {
+    //     this.categoryName = categoryName;
+    //     this.total = total;
+    // }
 }

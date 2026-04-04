@@ -106,7 +106,7 @@ public class FinancialServiceImpl implements FinancialService {
                 ? Sort.by(sortBy).ascending()
                 : Sort.by(sortBy).descending();
         Pageable pageDetails = PageRequest.of(pageNumber, pageSize, sortByAndOrder);
-        Page<FinancialRecord> financialPage = financialRecordRepository.findByfinancialId(pageDetails, Id);
+        Page<FinancialRecord> financialPage = financialRecordRepository.findByFinancialId(Id, pageDetails);
         List<FinancialRecord> financialRecords = financialPage.getContent();
         List<FinancialRecordDTO> financialRecordDTOs = financialRecords.stream()
                 .map(finance -> modelMapper.map(finance, FinancialRecordDTO.class)).toList();
@@ -133,7 +133,7 @@ public class FinancialServiceImpl implements FinancialService {
                 : Sort.by(sortBy).descending();
 
         Pageable pageDetails = PageRequest.of(pageNumber, pageSize, sortByAndOrder);
-        Page<FinancialRecord> financialPage=financialRecordRepository.findByCategory_CategoryId(pageDetails,categoryId);
+        Page<FinancialRecord> financialPage=financialRecordRepository.findByCategory_CategoryId(categoryId,pageDetails);
 
         List<FinancialRecord> financialRecords=financialPage.getContent();
         List<FinancialRecordDTO> financialRecordDTOs=financialRecords.stream().map(finance-> modelMapper.map(finance,FinancialRecordDTO.class)).toList();
@@ -203,7 +203,7 @@ public class FinancialServiceImpl implements FinancialService {
                 : Sort.by(sortBy).descending();
 
         Pageable pageDetails = PageRequest.of(pageNumber, pageSize, sortByAndOrder);
-        Page<FinancialRecord>financialPage=financialRecordRepository.findByUserUserId(userId,pageDetails);
+        Page<FinancialRecord>financialPage=financialRecordRepository.findByUser_UserId(userId,pageDetails);
 
         List<FinancialRecord> financialRecords=financialPage.getContent();
         List<FinancialRecordDTO> financialRecordDTOs=financialRecords.stream().map(fr->modelMapper.map(fr,FinancialRecordDTO.class)).toList();

@@ -17,13 +17,12 @@ import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
- @Transactional
+@Transactional
 public class DashBoardServiceImpl implements DashBoardService {
 
     private final FinancialRecordRepository financialRecordRepository;
     private final ModelMapper modelMapper;
 
-   
     @Override
     public DashboardDTO getDashboard() {
         Double income = financialRecordRepository.getTotalByType(RecordType.INCOME);
@@ -43,20 +42,22 @@ public class DashBoardServiceImpl implements DashBoardService {
                     FinancialRecordDTO dto = new FinancialRecordDTO();
                     dto.setFinancialId(fr.getFinancialId());
                     dto.setAmount(fr.getAmount());
-                    dto.setType(fr.getRecordType().name());
+                    dto.setType(fr.getRecordType().name() != null ? fr.getRecordType().name() : null);
                     dto.setNotes(fr.getNotes());
                     dto.setDate(fr.getDate());
-                    dto.setCategoryName(fr.getCategory().getCategoryName()); 
-                    dto.setUserId(fr.getUser().getUserId());
+                    dto.setCategoryName(
+                            fr.getCategory().getCategoryName() != null ? fr.getCategory().getCategoryName() : null);
+                    dto.setUserId(fr.getUser().getUserId() != null ? fr.getUser().getUserId() : null);
                     return dto;
                 }).toList();
-    
 
         dashboardDTO.setRecentTransactions(transaction);
 
-        List<MonthlyTrendDTO> trends = financialRecordRepository.getMonthlyTrend();
+        List<MonthlyTrendDTO> trends = financialRecordRepository.getMonthlyTrendRaw().stream().map(row -> new MonthlyTrendDTO((String) row[0],
+                        row[1] != null ? ((Number) row[1]).doubleValue() : 0.0,
+                        row[2] != null ? ((Number) row[2]).doubleValue() : 0.0)).toList();
         dashboardDTO.setMonthlyTrend(trends);
-        
+
         return dashboardDTO;
     }
 

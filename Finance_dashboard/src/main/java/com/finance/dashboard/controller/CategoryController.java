@@ -35,9 +35,9 @@ public class CategoryController {
     @GetMapping("/analyst/categories")
     public ResponseEntity<CategoryResponse> getAllCategories(
             @RequestParam(name = "pageNumber", defaultValue = AppCostant.PAGE_NUMBER, required = false) Integer pageNumber,
-            @RequestParam(name = "pageNumber", defaultValue = AppCostant.PAGE_SIZE, required = false) Integer pageSize,
-            @RequestParam(name = "pageNumber", defaultValue = AppCostant.SORT_CATEGORIES_BY, required = false) String sortBy,
-            @RequestParam(name = "pageNumber", defaultValue = AppCostant.SORT_DIR, required = false) String sortOrder) {
+            @RequestParam(name = "pageSize", defaultValue = AppCostant.PAGE_SIZE, required = false) Integer pageSize,
+            @RequestParam(name = "sortBy", defaultValue = AppCostant.SORT_CATEGORIES_BY, required = false) String sortBy,
+            @RequestParam(name = "sortOrder", defaultValue = AppCostant.SORT_DIR, required = false) String sortOrder) {
         CategoryResponse categoryResponse = categoryService.getAllCategory(pageNumber, pageSize, sortBy, sortOrder);
         return new ResponseEntity<>(categoryResponse, HttpStatus.OK);
     }

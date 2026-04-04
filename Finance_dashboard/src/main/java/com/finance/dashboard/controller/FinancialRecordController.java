@@ -42,8 +42,8 @@ public class FinancialRecordController {
     public ResponseEntity<FinancialRecordResponse> getAllRecords(
             @RequestParam(name = "pageNumber", defaultValue = AppCostant.PAGE_NUMBER, required = false) Integer pageNumber,
             @RequestParam(name = "pageSize", defaultValue = AppCostant.PAGE_SIZE, required = false) Integer pageSize,
-            @RequestParam(name = "pageNumber", defaultValue = AppCostant.SORT_RECORD_BY, required = false) String sortBy,
-            @RequestParam(name = "pageNumber", defaultValue = AppCostant.SORT_DIR, required = false) String sortOrder) {
+            @RequestParam(name = "sortBy", defaultValue = AppCostant.SORT_RECORD_BY, required = false) String sortBy,
+            @RequestParam(name = "sortOrder", defaultValue = AppCostant.SORT_DIR, required = false) String sortOrder) {
         FinancialRecordResponse response = financialService.getAllRecords(pageNumber, pageSize, sortBy, sortOrder);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
@@ -65,8 +65,8 @@ public class FinancialRecordController {
     public ResponseEntity<FinancialRecordResponse> getRecordsById(
             @RequestParam(name = "pageNumber", defaultValue = AppCostant.PAGE_NUMBER, required = false) Integer pageNumber,
             @RequestParam(name = "pageSize", defaultValue = AppCostant.PAGE_SIZE, required = false) Integer pageSize,
-            @RequestParam(name = "pageNumber", defaultValue = AppCostant.SORT_RECORD_BY, required = false) String sortBy,
-            @RequestParam(name = "pageNumber", defaultValue = AppCostant.SORT_DIR, required = false) String sortOrder,
+            @RequestParam(name = "sortBy", defaultValue = AppCostant.SORT_RECORD_BY, required = false) String sortBy,
+            @RequestParam(name = "sortOrder", defaultValue = AppCostant.SORT_DIR, required = false) String sortOrder,
             @PathVariable Long financialId) {
         FinancialRecordResponse financialRecordResponse = financialService.getRecordsById(pageNumber, pageSize, sortBy,
                 sortOrder, financialId);
@@ -77,8 +77,8 @@ public class FinancialRecordController {
     public ResponseEntity<FinancialRecordResponse> getRecordsByCategory(
             @RequestParam(name = "pageNumber", defaultValue = AppCostant.PAGE_NUMBER, required = false) Integer pageNumber,
             @RequestParam(name = "pageSize", defaultValue = AppCostant.PAGE_SIZE, required = false) Integer pageSize,
-            @RequestParam(name = "pageNumber", defaultValue = AppCostant.SORT_RECORD_BY, required = false) String sortBy,
-            @RequestParam(name = "pageNumber", defaultValue = AppCostant.SORT_DIR, required = false) String sortOrder,
+            @RequestParam(name = "sortBy", defaultValue = AppCostant.SORT_RECORD_BY, required = false) String sortBy,
+            @RequestParam(name = "sortOrder", defaultValue = AppCostant.SORT_DIR, required = false) String sortOrder,
             @PathVariable Long categoryId) {
         FinancialRecordResponse financialRecordResponse = financialService.getRecordsByCategory(pageNumber, pageSize,
                 sortBy, sortOrder, categoryId);
@@ -87,10 +87,10 @@ public class FinancialRecordController {
 
     @GetMapping("/analyst/records/date-range")
     public ResponseEntity<FinancialRecordResponse> getRecordsByDate(
-            @RequestParam(name = "pageNumber", defaultValue = AppCostant.PAGE_NUMBER, required = false) Integer pageNumber,
+           @RequestParam(name = "pageNumber", defaultValue = AppCostant.PAGE_NUMBER, required = false) Integer pageNumber,
             @RequestParam(name = "pageSize", defaultValue = AppCostant.PAGE_SIZE, required = false) Integer pageSize,
-            @RequestParam(name = "pageNumber", defaultValue = AppCostant.SORT_RECORD_BY, required = false) String sortBy,
-            @RequestParam(name = "pageNumber", defaultValue = AppCostant.SORT_DIR, required = false) String sortOrder,
+            @RequestParam(name = "sortBy", defaultValue = AppCostant.SORT_RECORD_BY, required = false) String sortBy,
+            @RequestParam(name = "sortOrder", defaultValue = AppCostant.SORT_DIR, required = false) String sortOrder,
             @RequestParam LocalDate startDate, @RequestParam LocalDate endDate) {
         FinancialRecordResponse recordResponse = financialService.getRecordsByDate(pageNumber, pageSize, sortBy,
                 sortOrder, startDate, endDate);
@@ -101,8 +101,8 @@ public class FinancialRecordController {
     public ResponseEntity<FinancialRecordResponse> getRecordByRecordType(
             @RequestParam(name = "pageNumber", defaultValue = AppCostant.PAGE_NUMBER, required = false) Integer pageNumber,
             @RequestParam(name = "pageSize", defaultValue = AppCostant.PAGE_SIZE, required = false) Integer pageSize,
-            @RequestParam(name = "pageNumber", defaultValue = AppCostant.SORT_RECORD_BY, required = false) String sortBy,
-            @RequestParam(name = "pageNumber", defaultValue = AppCostant.SORT_DIR, required = false) String sortOrder,
+            @RequestParam(name = "sortBy", defaultValue = AppCostant.SORT_RECORD_BY, required = false) String sortBy,
+            @RequestParam(name = "sortOrder", defaultValue = AppCostant.SORT_DIR, required = false) String sortOrder,
             @PathVariable RecordType type) {
         FinancialRecordResponse recordResponse = financialService.getRecordsByRecordType(pageNumber, pageSize, sortBy,
                 sortOrder, type);
@@ -111,10 +111,10 @@ public class FinancialRecordController {
     }
       @GetMapping("/analyst/records/user/{userId}")
     public ResponseEntity<FinancialRecordResponse> getRecordsByUser(
-            @RequestParam(name = "pageNumber", defaultValue = AppCostant.PAGE_NUMBER, required = false) Integer pageNumber,
+           @RequestParam(name = "pageNumber", defaultValue = AppCostant.PAGE_NUMBER, required = false) Integer pageNumber,
             @RequestParam(name = "pageSize", defaultValue = AppCostant.PAGE_SIZE, required = false) Integer pageSize,
-            @RequestParam(name = "pageNumber", defaultValue = AppCostant.SORT_RECORD_BY, required = false) String sortBy,
-            @RequestParam(name = "pageNumber", defaultValue = AppCostant.SORT_DIR, required = false) String sortOrder,
+            @RequestParam(name = "sortBy", defaultValue = AppCostant.SORT_RECORD_BY, required = false) String sortBy,
+            @RequestParam(name = "sortOrder", defaultValue = AppCostant.SORT_DIR, required = false) String sortOrder,
             @PathVariable Long userId) {
         FinancialRecordResponse financialRecordResponse = financialService.getRecordsByUserId(pageNumber, pageSize,
                 sortBy, sortOrder, userId);
